@@ -6,7 +6,7 @@
 
 # Mathematics
 
-**Mathematics** contains some static functions that may be handy at some time.
+**Mathematics** contains some maths-related static functions that may be handy at some time.
 
 ## Compatibility
 

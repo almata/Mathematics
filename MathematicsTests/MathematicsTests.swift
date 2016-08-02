@@ -21,16 +21,18 @@ class MathematicsTests: XCTestCase {
         super.tearDown()
     }
     
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    func testPrimeNumbersUpTo() {
+        XCTAssertEqual(Mathematics.primeNumbersUpTo(0), [])
+        XCTAssertEqual(Mathematics.primeNumbersUpTo(1), [])
+        XCTAssertEqual(Mathematics.primeNumbersUpTo(2), [2])
+        XCTAssertEqual(Mathematics.primeNumbersUpTo(3), [2, 3])
+        XCTAssertEqual(Mathematics.primeNumbersUpTo(5), [2, 3, 5])
+        XCTAssertEqual(Mathematics.primeNumbersUpTo(10), [2, 3, 5, 7])
+        XCTAssertEqual(Mathematics.primeNumbersUpTo(20), [2, 3, 5, 7, 11, 13, 17, 19])
     }
     
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measureBlock {
-            // Put the code you want to measure the time of here.
-        }
+    func testIntLowerPrimeNumbers() {
+        XCTAssertEqual(5.lowerPrimeNumbers, [2, 3, 5])
     }
     
 }

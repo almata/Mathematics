@@ -10,6 +10,8 @@
 		40771F661D50E98A00EB398B /* Mathematics.h in Headers */ = {isa = PBXBuildFile; fileRef = 40771F651D50E98A00EB398B /* Mathematics.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		40771F6D1D50E98A00EB398B /* Mathematics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40771F621D50E98A00EB398B /* Mathematics.framework */; };
 		40771F721D50E98A00EB398B /* MathematicsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40771F711D50E98A00EB398B /* MathematicsTests.swift */; };
+		40771F7D1D50E99F00EB398B /* Mathematics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40771F7C1D50E99F00EB398B /* Mathematics.swift */; };
+		40771F7F1D50EBF400EB398B /* Int+Mathematics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40771F7E1D50EBF400EB398B /* Int+Mathematics.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +31,8 @@
 		40771F6C1D50E98A00EB398B /* MathematicsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MathematicsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		40771F711D50E98A00EB398B /* MathematicsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MathematicsTests.swift; sourceTree = "<group>"; };
 		40771F731D50E98A00EB398B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		40771F7C1D50E99F00EB398B /* Mathematics.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Mathematics.swift; sourceTree = "<group>"; };
+		40771F7E1D50EBF400EB398B /* Int+Mathematics.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Int+Mathematics.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +75,8 @@
 		40771F641D50E98A00EB398B /* Mathematics */ = {
 			isa = PBXGroup;
 			children = (
+				40771F7C1D50E99F00EB398B /* Mathematics.swift */,
+				40771F7E1D50EBF400EB398B /* Int+Mathematics.swift */,
 				40771F651D50E98A00EB398B /* Mathematics.h */,
 				40771F671D50E98A00EB398B /* Info.plist */,
 			);
@@ -194,6 +200,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				40771F7F1D50EBF400EB398B /* Int+Mathematics.swift in Sources */,
+				40771F7D1D50E99F00EB398B /* Mathematics.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -310,28 +318,33 @@
 		40771F771D50E98A00EB398B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = Mathematics/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.albertmata.Mathematics;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
 		40771F781D50E98A00EB398B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = Mathematics/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.albertmata.Mathematics;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -378,6 +391,7 @@
 				40771F781D50E98A00EB398B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		40771F791D50E98A00EB398B /* Build configuration list for PBXNativeTarget "MathematicsTests" */ = {
 			isa = XCConfigurationList;
@@ -386,6 +400,7 @@
 				40771F7B1D50E98A00EB398B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

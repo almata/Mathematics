@@ -31,8 +31,21 @@ class MathematicsTests: XCTestCase {
         XCTAssertEqual(Mathematics.primeNumbersUpTo(20), [2, 3, 5, 7, 11, 13, 17, 19])
     }
     
-    func testIntLowerPrimeNumbers() {
-        XCTAssertEqual(5.lowerPrimeNumbers, [2, 3, 5])
+    func testIntPrimeNumbersUpTo() {
+        XCTAssertEqual(5.primeNumbersUpTo, [2, 3, 5])
+    }
+    
+    func testIsPrime() {
+        XCTAssert(Mathematics.isPrime(5))
+        XCTAssert(Mathematics.isPrime(17))
+        XCTAssert(Mathematics.isPrime(104729))
+        XCTAssert(!Mathematics.isPrime(4))
+        XCTAssert(!Mathematics.isPrime(10000))
+        XCTAssert(!Mathematics.isPrime(18369))
+    }
+    
+    func testIntIsPrime() {
+        XCTAssert(17.isPrime)
     }
     
 }

@@ -36,4 +36,16 @@ public struct Mathematics {
         return array.filter{ $0 != 0 }
     }
     
+    /// Checks if a number is prime.
+    /// - Parameter n: Number to check its primality.
+    /// - Returns: true if the number is prime, false otherwise.
+    public static func isPrime(n: Int) -> Bool {
+        let sqr = Int(sqrt(Double(n)))
+        let primes = primeNumbersUpTo(sqr)
+        for prime in primes {
+            if n % prime == 0 { return false }
+        }
+        return true
+    }
+    
 }

@@ -18,13 +18,11 @@ As this is (and probably will keep being) just a work in progress, there is no s
 
 ## Functions included
 
-### Prime numbers
+### primeNumbersUpTo(n: Int) -> [Int] 
 
-    primeNumbersUpTo(n: Int) -> [Int] 
+Function to calculate all prime numbers less than or equal to specified number. Prime numbers are calculated using the [Sieve of Eratosthenes](https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes) algorithm, as it is one of the most efficient ways to find all of the smaller primes and at the same time it is really simple to understand and implement.
 
-Function to calculate all prime numbers less than or equal to specified number. Just for convenience reasons, the function is also provided as a new property on `Int` (`lowerPrimeNumbers`) using an extension.
-
-Prime numbers are calculated using the [Sieve of Eratosthenes](https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes) algorithm, as it is one of the most efficient ways to find all of the smaller primes and at the same time it is really simple to understand and implement.
+Just for convenience reasons, the function is also provided as a new `lowerPrimeNumbers` property on `Int` using an extension.
 
 #### Example 1
 
@@ -36,11 +34,33 @@ Output:
 
 #### Example 2
 
-    13.lowerPrimeNumbers
+    13.primeNumbersUpTo
 
 Output:
 
 	[2, 3, 5, 7, 11, 13]
+
+### isPrime(n: Int) -> Bool
+
+Function to check if a number is prime or not. It uses the simplest [primality test](https://en.wikipedia.org/wiki/Primality_test), which is trial division: given an input number *n*, it checks whether any prime integer *m* from 2 to √n evenly divides *n* (the division leaves no remainder). If *n* is divisible by any *m* then *n* is composite, otherwise it is prime.
+
+For convenience reasons, the function is also provided as a `isPrime` property on `Int` using an extension.
+
+#### Example 3
+
+	Mathematics.isPrime(17)
+
+Output:
+
+    true
+
+#### Example 4
+
+    1024.isPrime
+
+Output:
+
+	false
 
 ## Author
 

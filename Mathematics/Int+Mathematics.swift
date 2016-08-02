@@ -10,8 +10,12 @@ import Foundation
 
 public extension Int {
     
-    public var lowerPrimeNumbers: [Int] {
+    public var primeNumbersUpTo: [Int] {
         return Mathematics.primeNumbersUpTo(self)
+    }
+    
+    public var isPrime: Bool {
+        return Mathematics.isPrime(self)
     }
     
 }

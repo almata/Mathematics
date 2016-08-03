@@ -18,4 +18,8 @@ public extension Int {
         return Mathematics.isPrime(self)
     }
     
+    public var factors: [Int] {
+        return Mathematics.factorsOf(self)
+    }
+    
 }

@@ -44,7 +44,7 @@ Output:
 
 Function to check if a number is prime or not. It uses the simplest [primality test](https://en.wikipedia.org/wiki/Primality_test), which is trial division: given an input number *n*, it checks whether any prime integer *m* from 2 to √n evenly divides *n* (the division leaves no remainder). If *n* is divisible by any *m* then *n* is composite, otherwise it is prime.
 
-For convenience reasons, the function is also provided as a `isPrime` property on `Int` using an extension.
+For convenience reasons, the function is also provided as an `isPrime` property on `Int` using an extension.
 
 #### Example 3
 
@@ -61,6 +61,28 @@ Output:
 Output:
 
 	false
+
+### factorsOf(n: Int) -> [Int]
+
+Function to calculate all factors of a number. That is, all positive integers that evenly divide that number. Please note that `factorsOf(:)` returns all factors of a number, regardless of whether they are prime numbers or not. There is a different function that returns all factors that happen to be prime numbers (`primeFactorsOf(:)`). Both functions return all factors in a sorted array. 
+
+For convenience reasons, the function is also provided as a `factors` property on `Int` using an extension.
+
+#### Example 5
+
+    Mathematics.factorsOf(1024)
+
+Output:
+
+    [1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024]
+
+#### Example 6
+
+    2000.factors
+
+Output:
+
+    [1, 2, 4, 5, 8, 10, 16, 20, 25, 40, 50, 80, 100, 125, 200, 250, 400, 500, 1000, 2000]
 
 ## Author
 

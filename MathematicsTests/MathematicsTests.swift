@@ -48,4 +48,19 @@ class MathematicsTests: XCTestCase {
         XCTAssert(17.isPrime)
     }
     
+    func testFactorsOf() {
+        XCTAssertEqual(Mathematics.factorsOf(0), [])
+        XCTAssertEqual(Mathematics.factorsOf(1), [1])
+        XCTAssertEqual(Mathematics.factorsOf(2), [1, 2])
+        XCTAssertEqual(Mathematics.factorsOf(3), [1, 3])
+        XCTAssertEqual(Mathematics.factorsOf(5), [1, 5])
+        XCTAssertEqual(Mathematics.factorsOf(10), [1, 2, 5, 10])
+        XCTAssertEqual(Mathematics.factorsOf(20), [1, 2, 4, 5, 10, 20])
+        XCTAssertEqual(Mathematics.factorsOf(100), [1, 2, 4, 5, 10, 20, 25, 50, 100])
+    }
+    
+    func testIntFactors() {
+        XCTAssertEqual(10.factors, [1, 2, 5, 10])
+    }
+    
 }

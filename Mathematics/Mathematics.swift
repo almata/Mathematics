@@ -48,4 +48,22 @@ public struct Mathematics {
         return true
     }
     
+    /// Calculates all factors of specified number. That is, all numbers that evenly divide that number.
+    /// - Parameter n: Number to calculate all factors of.
+    /// - Returns: A sorted array with all numbers that evenly divide `n`.
+    public static func factorsOf(n: Int) -> [Int] {
+        var factors = Set<Int>()
+        var limit = n
+        var i = 1
+        while i <= limit {
+            if n % i == 0 {
+                factors.insert(i)
+                factors.insert(n / i)
+                limit = n / i
+            }
+            i += 1
+        }
+        return Array(factors).sort()
+    }
+    
 }

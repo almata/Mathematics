@@ -65,5 +65,35 @@ public struct Mathematics {
         }
         return Array(factors).sort()
     }
+
+    /// Finds the contiguous subarray within a one-dimensional array of numbers which has the largest sum.
+    /// - Parameter array: One-dimensional array of numbers.
+    /// - Returns: An optional tuple with three values: `sum` has the largest sum in a contiguous subarray
+    ///     within `array`; `fromIndex` and `toIndex` are the initial and final indexes of that subarray 
+    ///     within original `array`. Nil is returned if the original `array` is empty.
+    public static func maximumSubarrayFrom(array: [Double]) -> (sum: Double, fromIndex: Int, toIndex: Int)? {
+        guard !array.isEmpty else { return nil }
+        
+        var maxEndingHere = array[0]
+        var maxSoFar = array[0]
+        var fromIndex = 0
+        var tempFromIndex = 0
+        var toIndex = 0
+        
+        for (index, number) in array[1..<array.count].enumerate() {
+            maxEndingHere = max(number, maxEndingHere + number)
+            if maxEndingHere <= 0  {
+                if maxEndingHere == number && maxEndingHere > maxSoFar { tempFromIndex = index + 1 }
+                else { tempFromIndex = index + 2 }
+            }
+            if maxEndingHere > maxSoFar {
+                toIndex = index + 1
+                fromIndex = tempFromIndex
+                maxSoFar = maxEndingHere
+            }
+        }
+
+        return (sum: maxSoFar, fromIndex: fromIndex, toIndex: toIndex)
+    }
     
 }

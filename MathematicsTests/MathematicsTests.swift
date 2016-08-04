@@ -63,4 +63,29 @@ class MathematicsTests: XCTestCase {
         XCTAssertEqual(10.factors, [1, 2, 5, 10])
     }
     
+    func testMaximumSubarrayFrom() {
+        let tuple1 = Mathematics.maximumSubarrayFrom([2, -1, 2, 3, 4, -5])
+        XCTAssertTrue(tuple1! == (sum: 10, fromIndex: 0, toIndex: 4))
+        let tuple2 = Mathematics.maximumSubarrayFrom([8, -2, 6, -1, 3, -2, 4, 1, -6, 1])
+        XCTAssertTrue(tuple2! == (sum: 17, fromIndex: 0, toIndex: 7))
+        let tuple3 = Mathematics.maximumSubarrayFrom([1, -2, 6, -1, 3, -2, 4, 1, -6, 1, 8])
+        XCTAssertTrue(tuple3! == (sum: 14, fromIndex: 2, toIndex: 10))
+        let tuple4 = Mathematics.maximumSubarrayFrom([1, -2, 6, -1, 3, -2, 4, 3, 1, -6, 1, 2])
+        XCTAssertTrue(tuple4! == (sum: 14, fromIndex: 2, toIndex: 8))
+        let tuple5 = Mathematics.maximumSubarrayFrom([-3, -1, -2])
+        XCTAssertTrue(tuple5! == (sum: -1, fromIndex: 1, toIndex: 1))
+        let tuple6 = Mathematics.maximumSubarrayFrom([0, 0, 0])
+        XCTAssertTrue(tuple6! == (sum: 0, fromIndex: 0, toIndex: 0))
+        let tuple7 = Mathematics.maximumSubarrayFrom([])
+        XCTAssertNil(tuple7)
+        let tuple8 = Mathematics.maximumSubarrayFrom([-3, -2, -1, 0, -1, -2, -3])
+        XCTAssertTrue(tuple8! == (sum: 0, fromIndex: 3, toIndex: 3))
+        let tuple9 = Mathematics.maximumSubarrayFrom([1, 2, 3, 4, 5])
+        XCTAssertTrue(tuple9! == (sum: 15, fromIndex: 0, toIndex: 4))
+        let tuple10 = Mathematics.maximumSubarrayFrom([-3, -2, -1])
+        XCTAssertTrue(tuple10! == (sum: -1, fromIndex: 2, toIndex: 2))
+        let tuple11 = Mathematics.maximumSubarrayFrom([0, -1, 2, -1, 3, 4, 5, -3, 6, -1, 2, -5, 1, 2])
+        XCTAssertTrue(tuple11! == (sum: 17, fromIndex: 2, toIndex: 10))
+    }
+    
 }

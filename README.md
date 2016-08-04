@@ -79,7 +79,7 @@ Original Kadane's algorithm consists of a scan through the array values, computi
     Mathematics.maximumSubarrayFrom([0, -1, 2, -1, 3, 4, 5, -3, 6, -1, 2, -5, 1, 2])!
 	> (17.0, 2, 10)
 
-The (17.0, 2, 10) tuple indicates maximum subarray is the one from index 2 to index 10 in the original array, so `[2, -1, 3, 4, 5, -3, 6, -1, 2]`. And the sum of all numbers in that subarray is 17.
+The `(17.0, 2, 10)` tuple indicates maximum subarray is the one from index 2 to index 10 in the original array, so `[2, -1, 3, 4, 5, -3, 6, -1, 2]`. And the sum of all numbers in that subarray is 17.
 
 ## Author
 

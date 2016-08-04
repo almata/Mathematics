@@ -27,18 +27,12 @@ Just for convenience reasons, the function is also provided as a new `lowerPrime
 #### Example 1
 
 	Mathematics.primeNumbersUpTo(17)
-
-Output:
-
-    [2, 3, 5, 7, 11, 13, 17]
+    > [2, 3, 5, 7, 11, 13, 17]
 
 #### Example 2
 
     13.primeNumbersUpTo
-
-Output:
-
-	[2, 3, 5, 7, 11, 13]
+	> [2, 3, 5, 7, 11, 13]
 
 ### isPrime(n: Int) -> Bool
 
@@ -49,40 +43,28 @@ For convenience reasons, the function is also provided as an `isPrime` property 
 #### Example 3
 
 	Mathematics.isPrime(17)
-
-Output:
-
-    true
+    > true
 
 #### Example 4
 
     1024.isPrime
-
-Output:
-
-	false
+	> false
 
 ### factorsOf(n: Int) -> [Int]
 
-Function to calculate all factors of a number. That is, all positive integers that evenly divide that number. Please note that `factorsOf(:)` returns all factors of a number, regardless of whether they are prime numbers or not. There is a different function that returns all factors that happen to be prime numbers (`primeFactorsOf(:)`). Both functions return all factors in a sorted array. 
+Function to calculate all factors of a number. That is, all positive integers that evenly divide that number. Please note that `factorsOf(:)` returns all factors of a number, regardless of whether they are prime numbers or not. There is a different function that returns all factors that happen to be prime numbers -- `primeFactorsOf(:)`. Both functions return all factors in a sorted array. 
 
 For convenience reasons, the function is also provided as a `factors` property on `Int` using an extension.
 
 #### Example 5
 
     Mathematics.factorsOf(1024)
-
-Output:
-
-    [1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024]
+    > [1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024]
 
 #### Example 6
 
     2000.factors
-
-Output:
-
-    [1, 2, 4, 5, 8, 10, 16, 20, 25, 40, 50, 80, 100, 125, 200, 250, 400, 500, 1000, 2000]
+    > [1, 2, 4, 5, 8, 10, 16, 20, 25, 40, 50, 80, 100, 125, 200, 250, 400, 500, 1000, 2000]
 
 ## Author
 

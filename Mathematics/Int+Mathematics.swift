@@ -22,4 +22,12 @@ public extension Int {
         return Mathematics.factorsOf(self)
     }
     
+    public var primeFactors: [Int] {
+        return Mathematics.primeFactorsOf(self)
+    }
+    
+    public var primeFactorization: [Int: Int] {
+        return Mathematics.primeFactorizationOf(self)
+    }
+    
 }

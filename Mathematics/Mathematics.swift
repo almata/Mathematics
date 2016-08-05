@@ -40,6 +40,8 @@ public struct Mathematics {
     /// - Parameter n: Number to check its primality.
     /// - Returns: true if the number is prime, false otherwise.
     public static func isPrime(n: Int) -> Bool {
+        guard n > 1 else { return false }
+        
         let sqr = Int(sqrt(Double(n)))
         let primes = primeNumbersUpTo(sqr)
         for prime in primes {
@@ -52,6 +54,8 @@ public struct Mathematics {
     /// - Parameter n: Number to calculate all factors of.
     /// - Returns: A sorted array with all numbers that evenly divide `n`.
     public static func factorsOf(n: Int) -> [Int] {
+        guard n > 0 else { return [] }
+        
         var factors = Set<Int>()
         var limit = n
         var i = 1
@@ -64,6 +68,77 @@ public struct Mathematics {
             i += 1
         }
         return Array(factors).sort()
+    }
+    
+    /// Calculates all prime factors of specified number. That is, all prime numbers that evenly divide that number.
+    /// - Parameter n: Number to calculate all prime factors of.
+    /// - Returns: A sorted array with all prime numbers that evenly divide `n`.
+    public static func primeFactorsOf(n: Int) -> [Int] {
+        guard n > 1 else { return [] }
+        
+        return Array(primeFactorizationOf(n).keys)
+    }
+    
+    /// Calculates the prime factorization of specified number.
+    /// - Parameter n: Number to calculate prime factorization of.
+    /// - Returns: A dictionary with all prime factors, where keys are prime factors and values their exponents.
+    public static func primeFactorizationOf(n: Int) -> [Int: Int] {
+        guard n > 1 else { return [:] }
+        
+        let primeNumbers = primeNumbersUpTo(n)
+        var factors = [Int: Int]()
+        var m = n
+        
+        while m != 1 {
+            for prime in primeNumbers {
+                if m % prime == 0 {
+                    factors[prime] = (factors[prime] ?? 0) + 1
+                    m /= prime
+                    break
+                }
+            }
+        }
+        
+        return factors
+    }
+    
+    /// Calculates the greatest common divisor of an array of numbers. That is, the largest positive integer that 
+    /// divides all of those numbers without a remainder.
+    /// - Parameter ns: Array of number to calculate the GCD of.
+    /// - Returns: GCD if it exists or nil if array was empty or contained only zeros.
+    public static func greatestCommonDivisorOf(ns: [Int]) -> Int? {
+        guard !ns.isEmpty else { return nil }
+        guard !ns.filter({ $0 != 0 }).isEmpty else { return nil }
+        guard ns.count > 1 else { return ns[0] }
+        
+        var gcd = ns[0]
+        for i in 1..<ns.count {
+            var num = ns[i]
+            if gcd > num { swap(&gcd, &num) }
+            var remainder = 0
+            repeat {
+                remainder = gcd % num
+                gcd = num
+                num = remainder
+            } while remainder != 0
+        }
+        return gcd
+    }
+    
+    /// Calculates the least common multiple of an array of numbers. That is, the smallest positive integer that 
+    /// is divisible by all of those numbers.
+    /// - Parameter ns: Array of number to calculate the LCM of.
+    /// - Returns: LCM if it exists or nil if array was empty or contained one or more zeros.
+    public static func leastCommonMultipleOf(ns: [Int]) -> Int? {
+        guard !ns.isEmpty else { return nil }
+        guard ns.filter({ $0 == 0 }).isEmpty else { return nil }
+        
+        var lcm = ns[0]
+        for i in 1..<ns.count {
+            guard let gcd = greatestCommonDivisorOf([lcm, ns[i]]) else { return nil }
+            lcm = abs(lcm * ns[i]) / gcd
+        }
+        return lcm
     }
 
     /// Finds the contiguous subarray within a one-dimensional array of numbers which has the largest sum.

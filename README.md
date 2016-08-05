@@ -18,10 +18,10 @@ As this is (and probably will keep being) just a work in progress, there is no s
 
 ## List of functions
 
-1. [primeNumbersUpTo](#primeNumbersUpTo)
-2. [isPrime](#isPrime)
-3. [factorsOf](#factorsOf)
-4. [maximumSubarrayFrom](#maximumSubarrayFrom)
+1. [primeNumbersUpTo](#primenumbersupto)
+2. [isPrime](#isprime)
+3. [factorsOf](#factorsof)
+4. [maximumSubarrayFrom](#maximumsubarrayfrom)
 
 ### primeNumbersUpTo
 

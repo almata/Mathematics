@@ -111,10 +111,9 @@ public struct Mathematics {
         guard !ns.filter({ $0 != 0 }).isEmpty else { return nil }
         guard ns.count > 1 else { return ns[0] }
         
-        var gcd = ns[0]
+        var gcd = abs(ns[0])
         for i in 1..<ns.count {
-            var num = ns[i]
-            if gcd > num { swap(&gcd, &num) }
+            var num = abs(ns[i])
             var remainder = 0
             repeat {
                 remainder = gcd % num

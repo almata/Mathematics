@@ -122,9 +122,12 @@ class MathematicsTests: XCTestCase {
         XCTAssertNil(gcd2)
 
         XCTAssertEqual(Mathematics.greatestCommonDivisorOf([2, -2]), 2)
+        XCTAssertEqual(Mathematics.greatestCommonDivisorOf([-2, 2]), 2)
+        XCTAssertEqual(Mathematics.greatestCommonDivisorOf([6, 20]), 2)
+        XCTAssertEqual(Mathematics.greatestCommonDivisorOf([20, 6]), 2)
         XCTAssertEqual(Mathematics.greatestCommonDivisorOf([12, 24, 60]), 12)
         XCTAssertEqual(Mathematics.greatestCommonDivisorOf([2, 3, 5, 7]), 1)
-        XCTAssertEqual(Mathematics.greatestCommonDivisorOf([10, 20, 30, 250]), 10)
+        XCTAssertEqual(Mathematics.greatestCommonDivisorOf([250, 30, 20, 10]), 10)
         XCTAssertEqual(Mathematics.greatestCommonDivisorOf([10, 20, 30, 250, 5]), 5)
         XCTAssertEqual(Mathematics.greatestCommonDivisorOf([10, 20, 30, 250, 5, 3]), 1)
     }

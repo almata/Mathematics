@@ -18,14 +18,14 @@ As this is (and probably will keep being) just a work in progress, there is no s
 
 ## List of functions
 
-1. [primeNumbersUpTo](#primenumbersupto)
-2. [isPrime](#isprime)
-3. [factorsOf](#factorsof)
-4. [primeFactorsOf](#primefactorsof)
-5. [primeFactorizationOf](#primefactorizationof)
-6. [greatestCommonDivisorOf](#greatestcommondivisorof)
-7. [leastCommonMultipleOf](#leastcommonmultipleof)
-8. [maximumSubarrayFrom](#maximumsubarrayfrom)
+1. [primeNumbersUpTo](#1-primenumbersupto)
+2. [isPrime](#2-isprime)
+3. [factorsOf](#3-factorsof)
+4. [primeFactorsOf](#4-primefactorsof)
+5. [primeFactorizationOf](#5-primefactorizationof)
+6. [greatestCommonDivisorOf](#6-greatestcommondivisorof)
+7. [leastCommonMultipleOf](#7-leastcommonmultipleof)
+8. [maximumSubarrayFrom](#8-maximumsubarrayfrom)
 
 ### 1. primeNumbersUpTo
 

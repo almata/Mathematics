@@ -29,7 +29,9 @@ As this is (and probably will keep being) just a work in progress, there is no s
 
 ### 1. primeNumbersUpTo
 
-    primeNumbersUpTo(n: Int) -> [Int] 
+```swift
+primeNumbersUpTo(n: Int) -> [Int] 
+```
 
 Function to calculate all prime numbers less than or equal to specified number. Prime numbers are calculated using the [Sieve of Eratosthenes](https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes) algorithm, as it is one of the most efficient ways to find all of the smaller primes and at the same time it is really simple to understand and implement.
 
@@ -37,17 +39,23 @@ Just for convenience reasons, the function is also provided as a new `lowerPrime
 
 #### Example
 
-	Mathematics.primeNumbersUpTo(17)
-    > [2, 3, 5, 7, 11, 13, 17]
+```swift
+Mathematics.primeNumbersUpTo(17)
+> [2, 3, 5, 7, 11, 13, 17]
+```
 
 #### Example
 
-    13.primeNumbersUpTo
-	> [2, 3, 5, 7, 11, 13]
+```swift
+13.primeNumbersUpTo
+> [2, 3, 5, 7, 11, 13]
+```
 
 ### 2. isPrime
 
-    isPrime(n: Int) -> Bool
+```swift
+isPrime(n: Int) -> Bool
+```
 
 Function to check if a number is prime or not. It uses the simplest [primality test](https://en.wikipedia.org/wiki/Primality_test), which is trial division: given an input number *n*, it checks whether any prime integer *m* from 2 to √n evenly divides *n* (the division leaves no remainder). If *n* is divisible by any *m* then *n* is composite, otherwise it is prime.
 
@@ -55,17 +63,23 @@ For convenience reasons, the function is also provided as an `isPrime` property 
 
 #### Example
 
-	Mathematics.isPrime(17)
-    > true
+```swift
+Mathematics.isPrime(17)
+> true
+```
 
 #### Example
 
-    1024.isPrime
-	> false
+```swift
+1024.isPrime
+> false
+```
 
 ### 3. factorsOf
 
-    factorsOf(n: Int) -> [Int]
+```swift
+factorsOf(n: Int) -> [Int]
+```
 
 Function to calculate all factors of a number. That is, all positive integers that evenly divide that number. Please note that `factorsOf(:)` returns all factors of a number, regardless of whether they are prime numbers or not. There is a different function that returns all factors that happen to be prime numbers -- `primeFactorsOf(:)`. Both functions return all factors in a sorted array. 
 
@@ -73,17 +87,23 @@ For convenience reasons, the function is also provided as a `factors` property o
 
 #### Example
 
-    Mathematics.factorsOf(1024)
-    > [1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024]
+```swift
+Mathematics.factorsOf(1024)
+> [1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024]
+```
 
 #### Example
 
-    2000.factors
-    > [1, 2, 4, 5, 8, 10, 16, 20, 25, 40, 50, 80, 100, 125, 200, 250, 400, 500, 1000, 2000]
+```swift
+2000.factors
+> [1, 2, 4, 5, 8, 10, 16, 20, 25, 40, 50, 80, 100, 125, 200, 250, 400, 500, 1000, 2000]
+```
 
 ### 4. primeFactorsOf
 
-    primeFactorsOf(n: Int) -> [Int]
+```swift
+primeFactorsOf(n: Int) -> [Int]
+```
 
 Function to calculate all prime factors of a number. That is, all prime numbers that divide that integer exactly. Prime factors are returned in a sorted array.
 
@@ -91,17 +111,23 @@ For convenience reasons, the function is also provided as a `primeFactors` prope
 
 #### Example
 
-    Mathematics.primeFactorsOf(34)
-	> [2, 17]
+```swift
+Mathematics.primeFactorsOf(34)
+> [2, 17]
+```
 
 #### Example
 
-    26.primeFactors
-	> [2, 13]
+```swift
+26.primeFactors
+> [2, 13]
+```
 
 ### 5. primeFactorizationOf
 
-    primeFactorizationOf(n: Int) -> [Int: Int]
+```swift
+primeFactorizationOf(n: Int) -> [Int: Int]
+```
 
 Function to calculate the prime factorization of a number. That is, a list of the integer's prime factors, together with their multiplicities. The process of determining these factors is called integer factorization. The fundamental theorem of arithmetic says that every positive integer has a single unique prime factorization. The prime factorization is returned as a dictionary where keys are the prime factors and values their exponents.
 
@@ -109,17 +135,23 @@ For convenience reasons, the function is also provided as a `primeFactorization`
 
 #### Example
 
-    Mathematics.primeFactorizationOf(300)
-	> [2: 2, 3: 1, 5: 2])
+```swift
+Mathematics.primeFactorizationOf(300)
+> [2: 2, 3: 1, 5: 2])
+```
 
 #### Example
 
-	3072.primeFactorization
-	> [2: 10, 3: 1]
+```swift
+3072.primeFactorization
+> [2: 10, 3: 1]
+```
 
 ### 6. greatestCommonDivisorOf
 
-    greatestCommonDivisorOf(ns: [Int]) -> Int?
+```swift
+greatestCommonDivisorOf(ns: [Int]) -> Int?
+```
 
 Function to calculate the Greatest Common Divisor of an array of numbers. That is, the largest positive integer that divides all those numbers without a remainder. The GCD can in principle be computed by determining the prime factorizations of all the numbers and comparing factors. However, a much more efficient method is the Euclidean algorithm, which uses a division algorithm such as long division in combination with the observation that the GCD of two numbers also divides their difference. For example, to compute GCD(48,18), we divide 48 by 18 to get a quotient of 2 and a remainder of 12. Then we divide 18 by 12 to get a quotient of 1 and a remainder of 6. Finally we divide 12 by 6 to get a remainder of 0, which means that 6 is the GCD. Note that we ignored the quotient in each step except to notice when the remainder reached 0, signalling that we had arrived at the answer.
 
@@ -127,21 +159,27 @@ This **Mathematics** library uses the Euclidean algorithm for performance reason
 
 #### Example
 
-	Mathematics.greatestCommonDivisorOf([12, 24, 60])
-	> 12
+```swift
+Mathematics.greatestCommonDivisorOf([12, 24, 60])
+> 12
+```
 
 ### 7. leastCommonMultipleOf
 
-    leastCommonMultipleOf(ns: [Int]) -> Int?
+```swift
+leastCommonMultipleOf(ns: [Int]) -> Int?
+```
 
 Function to calculate the Least Common Multiple of an array of numbers. That is, the smallest positive integer that is divisible by all of those numbers. There are different ways to calculate the Least Common Multiple of two (or *n*) numbers. One way, maybe the most intuitive, is finding the prime factorization of each number and then using those factors to calculate the LCM. The unique factorization theorem says that every positive integer greater than 1 can be written in only one way as a product of prime numbers. The prime numbers can be considered as the atomic elements which, when combined together, make up a composite number. This way works perfectly and it would look something like this in Swift (assuming `ns` is the array of numbers to get the LCM of):
 
-    var factors = [Int: Int]()
-    for n in ns.map({ abs($0) }) {
-        let primeFactorization = primeFactorizationOf(n)
-        primeFactorization.forEach { if (factors[$0] ?? 0) < $1 { factors[$0] = $1 }}
-    }
-    return Int(factors.reduce(1.0) { $0 * pow(Double($1.0), Double($1.1)) })
+```swift
+var factors = [Int: Int]()
+for n in ns.map({ abs($0) }) {
+    let primeFactorization = primeFactorizationOf(n)
+    primeFactorization.forEach { if (factors[$0] ?? 0) < $1 { factors[$0] = $1 }}
+}
+return Int(factors.reduce(1.0) { $0 * pow(Double($1.0), Double($1.1)) })
+```
 
 However, there is another way much more efficient using this formula that reduces the problem of computing the LCM to the problem of computing the Greatest Common Divisor (GCD):
 
@@ -149,12 +187,14 @@ However, there is another way much more efficient using this formula that reduce
 
 In Swift it could be done with the following code (again, assuming `ns` is the array of numbers to get the LCM of):
 
-    var lcm = ns[0]
-    for i in 1..<ns.count {
-        guard let gcd = greatestCommonDivisorOf([lcm, ns[i]]) else { return nil }
-        lcm = abs(lcm * ns[i]) / gcd
-    }
-    return lcm
+```swift
+var lcm = ns[0]
+for i in 1 ..< ns.count {
+    guard let gcd = greatestCommonDivisorOf([lcm, ns[i]]) else { return nil }
+    lcm = abs(lcm * ns[i]) / gcd
+}
+return lcm
+```
 
 Assuming the GCD is calculated using Euclid's algorithm instead of prime factorization, this last approach is much more efficient.
 
@@ -162,14 +202,18 @@ This **Mathematics** library uses Euclid's algorithm for GCD and the formula abo
 
 #### Example
 
-    Mathematics.leastCommonMultipleOf([345678, 234567, 123456])
-	> 556132595913792
+```swift
+Mathematics.leastCommonMultipleOf([345678, 234567, 123456])
+> 556132595913792
+```
 
 _With numbers like these is when using the most efficient algorithm really matters._
 
 ### 8. maximumSubarrayFrom
 
-    maximumSubarrayFrom(array: [Double]) -> (sum: Double, fromIndex: Int, toIndex: Int)?
+```swift
+maximumSubarrayFrom(array: [Double]) -> (sum: Double, fromIndex: Int, toIndex: Int)?
+```
 
 From the [Wikipedia](https://en.wikipedia.org/wiki/Maximum_subarray_problem), in computer science, the maximum subarray problem is the task of finding the contiguous subarray within a one-dimensional array of numbers which has the largest sum. For example, for the sequence of values −2, 1, −3, 4, −1, 2, 1, −5, 4; the contiguous subarray with the largest sum is 4, −1, 2, 1, with sum 6.
 
@@ -179,8 +223,10 @@ Original Kadane's algorithm consists of a scan through the array values, computi
 
 #### Example
 
-    Mathematics.maximumSubarrayFrom([0, -1, 2, -1, 3, 4, 5, -3, 6, -1, 2, -5, 1, 2])!
-	> (17.0, 2, 10)
+```swift
+Mathematics.maximumSubarrayFrom([0, -1, 2, -1, 3, 4, 5, -3, 6, -1, 2, -5, 1, 2])!
+> (17.0, 2, 10)
+```
 
 The `(17.0, 2, 10)` tuple indicates maximum subarray is the one from index 2 to index 10 in the original array, so `[2, -1, 3, 4, 5, -3, 6, -1, 2]`. And the sum of all numbers in that subarray is 17.
 

@@ -27,7 +27,7 @@ As this is (and probably will keep being) just a work in progress, there is no s
 7. [leastCommonMultipleOf](#7-leastcommonmultipleof)
 8. [maximumSubarrayFrom](#8-maximumsubarrayfrom)
 
-### 1. primeNumbersUpTo
+### 1. primeNumbersUpTo(_:)
 
 ```swift
 primeNumbersUpTo(n: Int) -> [Int] 
@@ -51,7 +51,7 @@ Mathematics.primeNumbersUpTo(17)
 > [2, 3, 5, 7, 11, 13]
 ```
 
-### 2. isPrime
+### 2. isPrime(_:)
 
 ```swift
 isPrime(n: Int) -> Bool
@@ -75,7 +75,7 @@ Mathematics.isPrime(17)
 > false
 ```
 
-### 3. factorsOf
+### 3. factorsOf(_:)
 
 ```swift
 factorsOf(n: Int) -> [Int]
@@ -99,7 +99,7 @@ Mathematics.factorsOf(1024)
 > [1, 2, 4, 5, 8, 10, 16, 20, 25, 40, 50, 80, 100, 125, 200, 250, 400, 500, 1000, 2000]
 ```
 
-### 4. primeFactorsOf
+### 4. primeFactorsOf(_:)
 
 ```swift
 primeFactorsOf(n: Int) -> [Int]
@@ -123,7 +123,7 @@ Mathematics.primeFactorsOf(34)
 > [2, 13]
 ```
 
-### 5. primeFactorizationOf
+### 5. primeFactorizationOf(_:)
 
 ```swift
 primeFactorizationOf(n: Int) -> [Int: Int]
@@ -147,7 +147,7 @@ Mathematics.primeFactorizationOf(300)
 > [2: 10, 3: 1]
 ```
 
-### 6. greatestCommonDivisorOf
+### 6. greatestCommonDivisorOf(_:)
 
 ```swift
 greatestCommonDivisorOf(ns: [Int]) -> Int?
@@ -164,7 +164,7 @@ Mathematics.greatestCommonDivisorOf([12, 24, 60])
 > 12
 ```
 
-### 7. leastCommonMultipleOf
+### 7. leastCommonMultipleOf(_:)
 
 ```swift
 leastCommonMultipleOf(ns: [Int]) -> Int?
@@ -209,7 +209,7 @@ Mathematics.leastCommonMultipleOf([345678, 234567, 123456])
 
 _With numbers like these is when using the most efficient algorithm really matters._
 
-### 8. maximumSubarrayFrom
+### 8. maximumSubarrayFrom(_:)
 
 ```swift
 maximumSubarrayFrom(array: [Double]) -> (sum: Double, fromIndex: Int, toIndex: Int)?

@@ -18,64 +18,16 @@ As this is (and probably will keep being) just a work in progress, there is no s
 
 ## List of functions
 
-1. [`primeNumbersUpTo(_:)`](#1-primenumbersupto_)
-2. [isPrime(_:)](#2-isprime_)
-3. [factorsOf(_:)](#3-factorsof_)
-4. [primeFactorsOf(_:)](#4-primefactorsof_)
-5. [primeFactorizationOf(_:)](#5-primefactorizationof_)
-6. [greatestCommonDivisorOf(_:)](#6-greatestcommondivisorof_)
-7. [leastCommonMultipleOf(_:)](#7-leastcommonmultipleof_)
-8. [maximumSubarrayFrom(_:)](#8-maximumsubarrayfrom_)
+[`factorsOf(_:)`](#factorsof_)
+[`greatestCommonDivisorOf(_:)`](#greatestcommondivisorof_)
+[`isPrime(_:)`](#isprime_)
+[`leastCommonMultipleOf(_:)`](#leastcommonmultipleof_)
+[`maximumSubarrayFrom(_:)`](#maximumsubarrayfrom_)
+[`primeFactorizationOf(_:)`](#primefactorizationof_)
+[`primeFactorsOf(_:)`](#primefactorsof_)
+[`primeNumbersUpTo(_:)`](#primenumbersupto_)
 
-### 1. `primeNumbersUpTo(_:)`
-
-```swift
-primeNumbersUpTo(n: Int) -> [Int] 
-```
-
-Function to calculate all prime numbers less than or equal to specified number. Prime numbers are calculated using the [Sieve of Eratosthenes](https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes) algorithm, as it is one of the most efficient ways to find all of the smaller primes and at the same time it is really simple to understand and implement.
-
-Just for convenience reasons, the function is also provided as a new `lowerPrimeNumbers` property on `Int` using an extension.
-
-#### Example
-
-```swift
-Mathematics.primeNumbersUpTo(17)
-> [2, 3, 5, 7, 11, 13, 17]
-```
-
-#### Example
-
-```swift
-13.primeNumbersUpTo
-> [2, 3, 5, 7, 11, 13]
-```
-
-### 2. isPrime(_:)
-
-```swift
-isPrime(n: Int) -> Bool
-```
-
-Function to check if a number is prime or not. It uses the simplest [primality test](https://en.wikipedia.org/wiki/Primality_test), which is trial division: given an input number *n*, it checks whether any prime integer *m* from 2 to √n evenly divides *n* (the division leaves no remainder). If *n* is divisible by any *m* then *n* is composite, otherwise it is prime.
-
-For convenience reasons, the function is also provided as an `isPrime` property on `Int` using an extension.
-
-#### Example
-
-```swift
-Mathematics.isPrime(17)
-> true
-```
-
-#### Example
-
-```swift
-1024.isPrime
-> false
-```
-
-### 3. factorsOf(_:)
+### `factorsOf(_:)`
 
 ```swift
 factorsOf(n: Int) -> [Int]
@@ -99,55 +51,7 @@ Mathematics.factorsOf(1024)
 > [1, 2, 4, 5, 8, 10, 16, 20, 25, 40, 50, 80, 100, 125, 200, 250, 400, 500, 1000, 2000]
 ```
 
-### 4. primeFactorsOf(_:)
-
-```swift
-primeFactorsOf(n: Int) -> [Int]
-```
-
-Function to calculate all prime factors of a number. That is, all prime numbers that divide that integer exactly. Prime factors are returned in a sorted array.
-
-For convenience reasons, the function is also provided as a `primeFactors` property on `Int` using an extension.
-
-#### Example
-
-```swift
-Mathematics.primeFactorsOf(34)
-> [2, 17]
-```
-
-#### Example
-
-```swift
-26.primeFactors
-> [2, 13]
-```
-
-### 5. primeFactorizationOf(_:)
-
-```swift
-primeFactorizationOf(n: Int) -> [Int: Int]
-```
-
-Function to calculate the prime factorization of a number. That is, a list of the integer's prime factors, together with their multiplicities. The process of determining these factors is called integer factorization. The fundamental theorem of arithmetic says that every positive integer has a single unique prime factorization. The prime factorization is returned as a dictionary where keys are the prime factors and values their exponents.
-
-For convenience reasons, the function is also provided as a `primeFactorization` property on `Int` using an extension.
-
-#### Example
-
-```swift
-Mathematics.primeFactorizationOf(300)
-> [2: 2, 3: 1, 5: 2])
-```
-
-#### Example
-
-```swift
-3072.primeFactorization
-> [2: 10, 3: 1]
-```
-
-### 6. greatestCommonDivisorOf(_:)
+### `greatestCommonDivisorOf(_:)`
 
 ```swift
 greatestCommonDivisorOf(ns: [Int]) -> Int?
@@ -164,7 +68,31 @@ Mathematics.greatestCommonDivisorOf([12, 24, 60])
 > 12
 ```
 
-### 7. leastCommonMultipleOf(_:)
+### `isPrime(_:)`
+
+```swift
+isPrime(n: Int) -> Bool
+```
+
+Function to check if a number is prime or not. It uses the simplest [primality test](https://en.wikipedia.org/wiki/Primality_test), which is trial division: given an input number *n*, it checks whether any prime integer *m* from 2 to √n evenly divides *n* (the division leaves no remainder). If *n* is divisible by any *m* then *n* is composite, otherwise it is prime.
+
+For convenience reasons, the function is also provided as an `isPrime` property on `Int` using an extension.
+
+#### Example
+
+```swift
+Mathematics.isPrime(17)
+> true
+```
+
+#### Example
+
+```swift
+1024.isPrime
+> false
+```
+
+### `leastCommonMultipleOf(_:)`
 
 ```swift
 leastCommonMultipleOf(ns: [Int]) -> Int?
@@ -209,7 +137,7 @@ Mathematics.leastCommonMultipleOf([345678, 234567, 123456])
 
 _With numbers like these is when using the most efficient algorithm really matters._
 
-### 8. maximumSubarrayFrom(_:)
+### `maximumSubarrayFrom(_:)`
 
 ```swift
 maximumSubarrayFrom(array: [Double]) -> (sum: Double, fromIndex: Int, toIndex: Int)?
@@ -229,6 +157,78 @@ Mathematics.maximumSubarrayFrom([0, -1, 2, -1, 3, 4, 5, -3, 6, -1, 2, -5, 1, 2])
 ```
 
 The `(17.0, 2, 10)` tuple indicates maximum subarray is the one from index 2 to index 10 in the original array, so `[2, -1, 3, 4, 5, -3, 6, -1, 2]`. And the sum of all numbers in that subarray is 17.
+
+### `primeFactorizationOf(_:)`
+
+```swift
+primeFactorizationOf(n: Int) -> [Int: Int]
+```
+
+Function to calculate the prime factorization of a number. That is, a list of the integer's prime factors, together with their multiplicities. The process of determining these factors is called integer factorization. The fundamental theorem of arithmetic says that every positive integer has a single unique prime factorization. The prime factorization is returned as a dictionary where keys are the prime factors and values their exponents.
+
+For convenience reasons, the function is also provided as a `primeFactorization` property on `Int` using an extension.
+
+#### Example
+
+```swift
+Mathematics.primeFactorizationOf(300)
+> [2: 2, 3: 1, 5: 2])
+```
+
+#### Example
+
+```swift
+3072.primeFactorization
+> [2: 10, 3: 1]
+```
+
+### `primeFactorsOf(_:)`
+
+```swift
+primeFactorsOf(n: Int) -> [Int]
+```
+
+Function to calculate all prime factors of a number. That is, all prime numbers that divide that integer exactly. Prime factors are returned in a sorted array.
+
+For convenience reasons, the function is also provided as a `primeFactors` property on `Int` using an extension.
+
+#### Example
+
+```swift
+Mathematics.primeFactorsOf(34)
+> [2, 17]
+```
+
+#### Example
+
+```swift
+26.primeFactors
+> [2, 13]
+```
+
+### `primeNumbersUpTo(_:)`
+
+```swift
+primeNumbersUpTo(n: Int) -> [Int] 
+```
+
+Function to calculate all prime numbers less than or equal to specified number. Prime numbers are calculated using the [Sieve of Eratosthenes](https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes) algorithm, as it is one of the most efficient ways to find all of the smaller primes and at the same time it is really simple to understand and implement.
+
+Just for convenience reasons, the function is also provided as a new `lowerPrimeNumbers` property on `Int` using an extension.
+
+#### Example
+
+```swift
+Mathematics.primeNumbersUpTo(17)
+> [2, 3, 5, 7, 11, 13, 17]
+```
+
+#### Example
+
+```swift
+13.primeNumbersUpTo
+> [2, 3, 5, 7, 11, 13]
+```
 
 ## Author
 

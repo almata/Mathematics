@@ -18,19 +18,19 @@ As this is (and probably will keep being) just a work in progress, there is no s
 
 ## List of functions
 
-[`factorsOf(_:)`](#factorsof_)
-[`greatestCommonDivisorOf(_:)`](#greatestcommondivisorof_)
-[`isPrime(_:)`](#isprime_)
-[`leastCommonMultipleOf(_:)`](#leastcommonmultipleof_)
-[`maximumSubarrayFrom(_:)`](#maximumsubarrayfrom_)
-[`primeFactorizationOf(_:)`](#primefactorizationof_)
-[`primeFactorsOf(_:)`](#primefactorsof_)
-[`primeNumbersUpTo(_:)`](#primenumbersupto_)
+* [`factorsOf(_:)`](#factorsof_)
+* [`greatestCommonDivisorOf(_:)`](#greatestcommondivisorof_)
+* [`isPrime(_:)`](#isprime_)
+* [`leastCommonMultipleOf(_:)`](#leastcommonmultipleof_)
+* [`maximumSubarrayFrom(_:)`](#maximumsubarrayfrom_)
+* [`primeFactorizationOf(_:)`](#primefactorizationof_)
+* [`primeFactorsOf(_:)`](#primefactorsof_)
+* [`primeNumbersUpTo(_:)`](#primenumbersupto_)
 
 ### `factorsOf(_:)`
 
 ```swift
-factorsOf(n: Int) -> [Int]
+static func factorsOf(n: Int) -> [Int]
 ```
 
 Function to calculate all factors of a number. That is, all positive integers that evenly divide that number. Please note that `factorsOf(:)` returns all factors of a number, regardless of whether they are prime numbers or not. There is a different function that returns all factors that happen to be prime numbers -- `primeFactorsOf(:)`. Both functions return all factors in a sorted array. 
@@ -54,7 +54,7 @@ Mathematics.factorsOf(1024)
 ### `greatestCommonDivisorOf(_:)`
 
 ```swift
-greatestCommonDivisorOf(ns: [Int]) -> Int?
+static func greatestCommonDivisorOf(ns: [Int]) -> Int?
 ```
 
 Function to calculate the Greatest Common Divisor of an array of numbers. That is, the largest positive integer that divides all those numbers without a remainder. The GCD can in principle be computed by determining the prime factorizations of all the numbers and comparing factors. However, a much more efficient method is the Euclidean algorithm, which uses a division algorithm such as long division in combination with the observation that the GCD of two numbers also divides their difference. For example, to compute GCD(48,18), we divide 48 by 18 to get a quotient of 2 and a remainder of 12. Then we divide 18 by 12 to get a quotient of 1 and a remainder of 6. Finally we divide 12 by 6 to get a remainder of 0, which means that 6 is the GCD. Note that we ignored the quotient in each step except to notice when the remainder reached 0, signalling that we had arrived at the answer.
@@ -71,7 +71,7 @@ Mathematics.greatestCommonDivisorOf([12, 24, 60])
 ### `isPrime(_:)`
 
 ```swift
-isPrime(n: Int) -> Bool
+static func isPrime(n: Int) -> Bool
 ```
 
 Function to check if a number is prime or not. It uses the simplest [primality test](https://en.wikipedia.org/wiki/Primality_test), which is trial division: given an input number *n*, it checks whether any prime integer *m* from 2 to √n evenly divides *n* (the division leaves no remainder). If *n* is divisible by any *m* then *n* is composite, otherwise it is prime.
@@ -95,7 +95,7 @@ Mathematics.isPrime(17)
 ### `leastCommonMultipleOf(_:)`
 
 ```swift
-leastCommonMultipleOf(ns: [Int]) -> Int?
+static func leastCommonMultipleOf(ns: [Int]) -> Int?
 ```
 
 Function to calculate the Least Common Multiple of an array of numbers. That is, the smallest positive integer that is divisible by all of those numbers. There are different ways to calculate the Least Common Multiple of two (or *n*) numbers. One way, maybe the most intuitive, is finding the prime factorization of each number and then using those factors to calculate the LCM. The unique factorization theorem says that every positive integer greater than 1 can be written in only one way as a product of prime numbers. The prime numbers can be considered as the atomic elements which, when combined together, make up a composite number. This way works perfectly and it would look something like this in Swift (assuming `ns` is the array of numbers to get the LCM of):
@@ -140,7 +140,7 @@ _With numbers like these is when using the most efficient algorithm really matte
 ### `maximumSubarrayFrom(_:)`
 
 ```swift
-maximumSubarrayFrom(array: [Double]) -> (sum: Double, fromIndex: Int, toIndex: Int)?
+static func maximumSubarrayFrom(array: [Double]) -> (sum: Double, fromIndex: Int, toIndex: Int)?
 ```
 
 From the [Wikipedia](https://en.wikipedia.org/wiki/Maximum_subarray_problem), in computer science, the maximum subarray problem is the task of finding the contiguous subarray within a one-dimensional array of numbers which has the largest sum. For example, for the sequence of values −2, 1, −3, 4, −1, 2, 1, −5, 4; the contiguous subarray with the largest sum is 4, −1, 2, 1, with sum 6.
@@ -161,7 +161,7 @@ The `(17.0, 2, 10)` tuple indicates maximum subarray is the one from index 2 to 
 ### `primeFactorizationOf(_:)`
 
 ```swift
-primeFactorizationOf(n: Int) -> [Int: Int]
+static func primeFactorizationOf(n: Int) -> [Int: Int]
 ```
 
 Function to calculate the prime factorization of a number. That is, a list of the integer's prime factors, together with their multiplicities. The process of determining these factors is called integer factorization. The fundamental theorem of arithmetic says that every positive integer has a single unique prime factorization. The prime factorization is returned as a dictionary where keys are the prime factors and values their exponents.
@@ -185,7 +185,7 @@ Mathematics.primeFactorizationOf(300)
 ### `primeFactorsOf(_:)`
 
 ```swift
-primeFactorsOf(n: Int) -> [Int]
+static func primeFactorsOf(n: Int) -> [Int]
 ```
 
 Function to calculate all prime factors of a number. That is, all prime numbers that divide that integer exactly. Prime factors are returned in a sorted array.
@@ -209,7 +209,7 @@ Mathematics.primeFactorsOf(34)
 ### `primeNumbersUpTo(_:)`
 
 ```swift
-primeNumbersUpTo(n: Int) -> [Int] 
+static func primeNumbersUpTo(n: Int) -> [Int] 
 ```
 
 Function to calculate all prime numbers less than or equal to specified number. Prime numbers are calculated using the [Sieve of Eratosthenes](https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes) algorithm, as it is one of the most efficient ways to find all of the smaller primes and at the same time it is really simple to understand and implement.

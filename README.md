@@ -18,16 +18,16 @@ As this is (and probably will keep being) just a work in progress, there is no s
 
 ## List of functions
 
-1. [primeNumbersUpTo](#1-primenumbersupto)
-2. [isPrime](#2-isprime)
-3. [factorsOf](#3-factorsof)
-4. [primeFactorsOf](#4-primefactorsof)
-5. [primeFactorizationOf](#5-primefactorizationof)
-6. [greatestCommonDivisorOf](#6-greatestcommondivisorof)
-7. [leastCommonMultipleOf](#7-leastcommonmultipleof)
-8. [maximumSubarrayFrom](#8-maximumsubarrayfrom)
+1. [`primeNumbersUpTo(_:)`](#1-primenumbersupto_)
+2. [isPrime(_:)](#2-isprime_)
+3. [factorsOf(_:)](#3-factorsof_)
+4. [primeFactorsOf(_:)](#4-primefactorsof_)
+5. [primeFactorizationOf(_:)](#5-primefactorizationof_)
+6. [greatestCommonDivisorOf(_:)](#6-greatestcommondivisorof_)
+7. [leastCommonMultipleOf(_:)](#7-leastcommonmultipleof_)
+8. [maximumSubarrayFrom(_:)](#8-maximumsubarrayfrom_)
 
-### 1. primeNumbersUpTo(_:)
+### 1. `primeNumbersUpTo(_:)`
 
 ```swift
 primeNumbersUpTo(n: Int) -> [Int] 
